@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+          xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+          xmlns:shared="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+          x:Class="Sample.ViewCells.FeedViewCell">
+    <Frame Margin="1" Padding="0" CornerRadius="10">
+        <Frame.Resources>
+            <ResourceDictionary>
+                <x:String x:Key="sourceSansRegular">SourceSansPro-Regular.otf#SourceSansPro-Regular</x:String>
+                <x:String x:Key="sourceSansBold">SourceSansPro-Bold.otf#SourceSansPro-Bold</x:String>
+            </ResourceDictionary>
+        </Frame.Resources>
+        <Frame.Content>
+            <StackLayout Grid.RowSpan="2" HeightRequest="210">
+                <Grid>
+                    <shared:VideoView
+                              x:Name="videoView" 
+                              HorizontalOptions="FillAndExpand" 
+                              HeightRequest="250"
+                              VerticalOptions="FillAndExpand"/>
+
+                    <Frame  x:Name="Play" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+                        <ffimageloading:CachedImage 
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+			                        WidthRequest="30" 
+                                    Aspect="AspectFill"
+			                        DownsampleToViewSize="true"
+                                    Source="play_video.png"/>
+                    </Frame>
+
+                    <Frame x:Name="Loading" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False" BackgroundColor="Transparent">
+                        <ffimageloading:CachedImage 
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+			                        WidthRequest="30" 
+                                    Aspect="AspectFill"
+			                        DownsampleToViewSize="true"
+                                    Source="spinner.gif"/>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Frame.Content>
+    </Frame>
+</ViewCell>

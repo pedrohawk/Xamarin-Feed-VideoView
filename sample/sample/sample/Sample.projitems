@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{C7C55747-09F0-4B23-9C36-A34613C75867}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>RookieNationNew</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Relation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RookieConverters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Status.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Styles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Threads.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Timer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Feed.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Media.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\BaseContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\testevideopage.xaml.cs">
+      <DependentUpon>testevideopage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewCells\FeedViewCell.xaml.cs">
+      <DependentUpon>FeedViewCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\testevideopage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewCells\FeedViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

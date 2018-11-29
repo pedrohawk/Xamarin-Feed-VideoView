@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shared="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+             xmlns:local="clr-namespace:Sample.ViewModels"
+             xmlns:viewcells="clr-namespace:Sample.ViewCells"
+             x:Class="Sample.Pages.testevideopage">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ListView         
+        x:Name="FeedListView"
+        ItemsSource="{Binding MainFeed}" 
+        HasUnevenRows="true" 
+        SeparatorColor="#E0E0E0"
+        ItemTapped="FeedListView_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <viewcells:FeedViewCell/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+
+</ContentPage>
